@@ -3,13 +3,16 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2017 at 04:06 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+07:00";
 CREATE DATABASE dbs401;
+CREATE USER 'group6'@'localhost' IDENTIFIED BY '\5up3rSecur3.P4s5w0rd(>?';
+GRANT ALL PRIVILEGES ON dbs401.* TO 'group6'@'localhost';
+FLUSH PRIVILEGES;
+
 USE dbs401;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,7 +21,7 @@ USE dbs401;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `store`
+-- Database: `db401`
 --
 
 -- --------------------------------------------------------
