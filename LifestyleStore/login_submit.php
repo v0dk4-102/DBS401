@@ -2,8 +2,8 @@
     require 'connection.php';
     session_start();
     $email=$_POST['email'];
-    $regex_email="/\b(?:or|OR|Or|oR)\b/";
-    if(preg_match($regex_email,$email)){
+    $regex_email="/\b(?:or|and)\b/";
+    if(preg_match($regex_email,strtolower($email))){
         echo "Boooooooooo..........";
         ?>
         <meta http-equiv="refresh" content="2;url=login.php" />
