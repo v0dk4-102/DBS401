@@ -8,6 +8,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+07:00";
+DROP DATABASE IF EXISTS dbs401;
 CREATE DATABASE dbs401;
 CREATE USER 'group6'@'localhost' IDENTIFIED BY '\5up3rSecur3.P4s5w0rd(>?';
 GRANT ALL PRIVILEGES ON dbs401.* TO 'group6'@'localhost';
