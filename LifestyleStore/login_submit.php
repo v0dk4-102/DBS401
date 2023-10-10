@@ -2,9 +2,9 @@
     require 'connection.php';
     session_start();
     $email=$_POST['email'];
-    $regex_email="/\b(?:or|OR)\b/";
-    if(!preg_match($regex_email,$email)){
-        echo "Incorrect email. Redirecting you back to login page...";
+    $regex_email="/\b(?:or|OR|Or|oR)\b/";
+    if(preg_match($regex_email,$email)){
+        echo "Boooooooooo..........";
         ?>
         <meta http-equiv="refresh" content="2;url=login.php" />
         <?php
