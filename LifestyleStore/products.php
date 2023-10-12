@@ -1,7 +1,7 @@
 <?php
     session_start();
     require 'check_if_added.php';
-    if (isset($_SESSION['email']) && $_SESSION['email'] == 'ram1234@xyz.com') {
+    if (isset($_SESSION['email']) && $_SESSION['email'] == 'khoadan@gmail.com') {
         echo '
 <strong style="font-size: 18px;">FLAG{This_is_flag}</strong>';
     } else {
