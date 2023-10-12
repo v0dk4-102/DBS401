@@ -40,7 +40,7 @@
 	// Xử lý tìm kiếm
 	if (isset($_GET['search'])) {
 	    $search = $_GET['search'];
-	    if (preg_match('/sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|column|table|exp|info|insert|to|del|admin|pass|sec|hex|username|regex|id|if|case|and|or|ascii|[~.^\-\/\\\=<>+\'"$%#]/i',$search)) {
+	    if (preg_match('/sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|column|table|exp|info|insert|to|del|admin|pass|sec|hex|users|regex|id|if|case|and|or|ascii|[~.^\-\/\\\=<>+\'"$%#]/i',$search)) {
 	    	echo '
 												<strong style="font-size: 50px;">Dumpppppp...</strong>';
 	    	echo '
