@@ -77,7 +77,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `contact`, `city`, `address`) VALUES
-(1, 'Sajal', 'sajal.agrawal1997@gmail.com', 'abc123', '8899889988', 'Indore', '100 palace colony, Indore'),
+(1, 'khoadan', 'khoadan@gmail.com', '893jf98q3@(jd@(9J', '8899889988', 'VietNam', 'BacNing'),
 (2, 'Ram', 'ram1234@xyz.com', 'abc123', '8899889989', 'Pune', '100 palace colony, Pune'),
 (3, 'Shyam', 'shyam@xyz.com', 'abc123', '8899889990', 'Bangalore', '100 palace colony, Bangalore');
 
