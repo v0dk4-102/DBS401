@@ -5,7 +5,7 @@
         header('location:index.php');
     }  
     // $old_password= md5(md5(mysqli_real_escape_string($con,$_POST['oldPassword'])));
-    $new_password= md5(md5(mysqli_real_escape_string($con,$_POST['newPassword'])));
+    $new_password= mysqli_real_escape_string($con,$_POST['newPassword']);
     $email=$_SESSION['email'];
     //echo $email;
     $password_from_database_query="select password from users where email='$email'";
