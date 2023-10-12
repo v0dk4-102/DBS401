@@ -12,30 +12,30 @@
     $regex_passwd="#\b(?:or|and|\=|like)\b#";
     $password=$_POST['password'];
     if(preg_match($regex_passwd,strtolower($password))){
-        echo "Boooooooooo..........";
+        echo '<strong style="font-size: 50px;">Dumpppppp...</strong>';
         ?>
         <meta http-equiv="refresh" content="2;url=login.php" />
         <?php
+    } else {
+        $user_authentication_query="select id,email from users where email='$email' and password='$password'";
+        $user_authentication_result=mysqli_query($con,$user_authentication_query) or die(mysqli_error($con));
+        $rows_fetched=mysqli_num_rows($user_authentication_result);
+        if($rows_fetched==0){
+            //no user
+            //redirecting to same login page
+            ?>
+            <script>
+                window.alert("Wrong username or password");
+            </script>
+            <meta http-equiv="refresh" content="1;url=login.php" />
+            <?php
+            //header('location: login');
+            //echo "Wrong email or password.";
+        }else{
+            $row=mysqli_fetch_array($user_authentication_result);
+            $_SESSION['email']=$email;
+            $_SESSION['id']=$row['id'];  //user id
+            header('location: products.php');
+        }
     }
-    $user_authentication_query="select id,email from users where email='$email' and password='$password'";
-    $user_authentication_result=mysqli_query($con,$user_authentication_query) or die(mysqli_error($con));
-    $rows_fetched=mysqli_num_rows($user_authentication_result);
-    if($rows_fetched==0){
-        //no user
-        //redirecting to same login page
-        ?>
-        <script>
-            window.alert("Wrong username or password");
-        </script>
-        <meta http-equiv="refresh" content="1;url=login.php" />
-        <?php
-        //header('location: login');
-        //echo "Wrong email or password.";
-    }else{
-        $row=mysqli_fetch_array($user_authentication_result);
-        $_SESSION['email']=$email;
-        $_SESSION['id']=$row['id'];  //user id
-        header('location: products.php');
-    }
-    
  ?>
