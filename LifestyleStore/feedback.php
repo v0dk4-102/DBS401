@@ -1,7 +1,6 @@
 <?php
     session_start();
     require 'check_if_added.php';
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,47 +25,48 @@
 				<div class="jumbotron">
 					<h1>Welcome to our LifeStyle Store!</h1>
 					<p>We have the best cameras, watches and shirts for you. No need to hunt around, we have all in one place.</p>
+					<h2>Warning: The website has just been attacked by hackers by uploading a shell file that fakes customer feedback. Please do not open strange files!!!</h2>
 				</div>
 			</div>
 			<div class="container">
-				<h1>Search</h1>
-				<form method="get" action="search.php" class="form-inline mb-2">
+				<form method="post" action="feedback.php" class="form-inline mb-2">
 					<div class="form-group">
-						<input type="text" name="search" placeholder="Name" class="form-control mr-2">
+						<input type="text" name="feedback" placeholder="feedback/file.txt" class="form-control mr-2">
 					</div>
-					<button type="submit" class="btn btn-primary">Search</button>
+					<button type="submit" class="btn btn-primary">View</button>
 				</form>
-				<br>
-				<br>
-				<br> <?php
-	    require 'connection.php';
-	    session_start();
-    
-	// Xử lý tìm kiếm
-	if (isset($_GET['search'])) {
-	    $search = $_GET['search'];
-	    if (preg_match("#\b(?:sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|exp|info|insert|to|del|flag|pass|sec|hex|users|regex|password|if|case|and|or|ascii|sleep)\b#",strtolower($search))) {
-	    	echo '<strong style="font-size: 50px;">Dumpppppp...</strong>';
-	    	echo '<br>';
-		echo "We had filtered sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|exp|info|insert|to|del|flag|pass|sec|hex|users|regex|password|if|case|and|or|ascii|sleep";
-
-	    } else {
-		    $query = "SELECT name, price FROM items WHERE name LIKE '%$search%'";
-		    $result = mysqli_query($con,$query) or die(mysqli_error($con));
-
-		    if (mysqli_num_rows($result) > 0) {
-			while ($row = mysqli_fetch_assoc($result)) {
-				$second = $row["name"];
-				$third = $row["price"];
-				echo "<pre>Name: {$second}<br />Price: {$third}</pre>";
-			}
-		    } else {
-			echo "Not found!!!!";
-		    }
-	    }
-	}
-	?>
-			</div>
+				<?php
+				
+				if (isset($_POST['feedback'])) {
+					$name = $_POST['feedback'];
+					if (stripos($name, "feedback/") !== false && stripos($name, "../") == false) {
+						
+						$path = $name;
+						if(isset($path)) {
+							echo "<br><br><br>";
+							include("$path");
+							echo "<br><br><br>";
+						} else {
+							include("feedback.php");			
+						}
+					} else {
+						echo "<h3>Error Syntax</h3>";
+					}
+					
+    				}
+    				echo "</br>" . "List of feedback" . "</br>";
+    				$directory = 'feedback';
+				if (is_dir($directory)) {
+	    				$files = scandir($directory);
+	    				shuffle($files);
+	    				foreach ($files as $file) {
+	       					if ($file != '.' && $file != '..') {
+		    					echo "<pre>$file</pre>";
+						}
+	   				}
+				}
+    				?>
+			</div>			
 			<br>
 			<br>
 			<br>

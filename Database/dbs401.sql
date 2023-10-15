@@ -77,7 +77,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `contact`, `city`, `address`) VALUES
-(1, 'khoadan', 'khoadan@gmail.com', '893jf98q3@(jd@(9J', '8899889988', 'VietNam', 'BacNing'),
+(1, 'khoadan', 'khoadan@gmail.com', '893jf98q3@(jd@(9J', '8899889988', 'VietNam', 'BacNinh'),
 (2, 'Ram', 'ram1234@xyz.com', 'abc123', '8899889989', 'Pune', '100 palace colony, Pune'),
 (3, 'Shyam', 'shyam@xyz.com', 'abc123', '8899889990', 'Bangalore', '100 palace colony, Bangalore');
 
@@ -165,9 +165,9 @@ ALTER TABLE `users_items`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-CREATE TABLE `flag` (
+CREATE TABLE `secret` (
   `flag` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `flag` (`flag`) VALUES
-('FLAG{This_is_flag}');
+INSERT INTO `secret` (`flag`) VALUES
+('FLAG{sq1m4p_1s_s0_dUmp}');

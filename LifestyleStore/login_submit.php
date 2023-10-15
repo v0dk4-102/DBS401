@@ -9,7 +9,7 @@
         <meta http-equiv="refresh" content="2;url=login.php" />
         <?php
     }
-    $regex_passwd="#\b(?:or|and|\=|like)\b#";
+    $regex_passwd="#\b(?:or|like)\b#";
     $password=$_POST['password'];
     if(preg_match($regex_passwd,strtolower($password))){
         echo '<strong style="font-size: 50px;">Dumpppppp...</strong>';

@@ -3,7 +3,7 @@
     require 'check_if_added.php';
     if (isset($_SESSION['email']) && $_SESSION['email'] == 'khoadan@gmail.com') {
         echo '
-<strong style="font-size: 18px;">FLAG{This_is_flag}</strong>';
+<strong style="font-size: 18px;">FLAG{3a5y_bYp4ss_4u7h3n}</strong>';
     } else {
     }
 ?>
