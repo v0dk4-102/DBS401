@@ -46,7 +46,7 @@
 	if (isset($_GET['search'])) {
 	    $search = $_GET['search'];
 	    if (preg_match("#\b(?:sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|exp|info|insert|to|del|flag|pass|sec|hex|users|regex|password|if|case|and|or|ascii|sleep)\b#",strtolower($search))) {
-	    	echo '<strong style="font-size: 50px;">Dumpppppp...</strong>';
+	    	echo '<strong style="font-size: 50px;">Dummmmmmmmmmmm...</strong>';
 	    	echo '<br>';
 		echo "We had filtered sys|procedure|xml|concat|group|db|where|like|limit|in|0x|extract|by|load|as|binary|join|using|pow|exp|info|insert|to|del|flag|pass|sec|hex|users|regex|password|if|case|and|or|ascii|sleep";
 
